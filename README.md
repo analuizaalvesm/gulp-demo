@@ -87,15 +87,15 @@ package.json           # Dependências e scripts
 
 ### Tarefas Configuradas
 
-| Tarefa | Descrição | Redução de Tamanho |
-|--------|-----------|-------------------|
-| `clean` | Remove o diretório `dist` para garantir build limpo | - |
-| `html` | Minifica HTML, remove espaços e comentários | ~28% |
-| `styles` | Compila SCSS para CSS e minifica o resultado | ~46% |
-| `scripts` | Concatena múltiplos arquivos JS e minifica | ~40% |
-| `images` | Comprime imagens mantendo qualidade visual | 30-60% |
-| `watch` | Monitora alterações e re-executa tarefas | - |
-| `server` | Inicia servidor local com live reload | - |
+| Tarefa    | Descrição                                           | Redução de Tamanho |
+| --------- | --------------------------------------------------- | ------------------ |
+| `clean`   | Remove o diretório `dist` para garantir build limpo | -                  |
+| `html`    | Minifica HTML, remove espaços e comentários         | ~28%               |
+| `styles`  | Compila SCSS para CSS e minifica o resultado        | ~46%               |
+| `scripts` | Concatena múltiplos arquivos JS e minifica          | ~40%               |
+| `images`  | Comprime imagens mantendo qualidade visual          | 30-60%             |
+| `watch`   | Monitora alterações e re-executa tarefas            | -                  |
+| `server`  | Inicia servidor local com live reload               | -                  |
 
 **Redução média total:** 40-45%
 
@@ -110,6 +110,7 @@ npm start
 ```
 
 Este comando irá:
+
 1. Executar o build completo do projeto
 2. Iniciar servidor HTTP local na porta 3000
 3. Ativar monitoramento de arquivos (watch mode)
@@ -127,11 +128,13 @@ Acesse a aplicação em: `http://localhost:3000`
 ### Exemplo de Live Reload
 
 Ao editar `src/scss/styles.scss`:
+
 ```scss
-$primary-color: #3498db;  // Alterar esta variável
+$primary-color: #3498db; // Alterar esta variável
 ```
 
 O Gulp irá automaticamente:
+
 - Compilar SCSS para CSS
 - Minificar o CSS resultante
 - Atualizar o navegador
@@ -157,14 +160,17 @@ ls -lh dist/css/
 ### Diferenças de Processamento
 
 **HTML:**
+
 - Fonte: Formatado com indentação e espaços
 - Produção: Minificado em uma única linha
 
 **CSS:**
+
 - Fonte: SCSS com variáveis, mixins e comentários
 - Produção: CSS puro, minificado sem espaços
 
 **JavaScript:**
+
 - Fonte: 3 arquivos separados com comentários
 - Produção: 1 arquivo concatenado e minificado
 
@@ -173,15 +179,18 @@ ls -lh dist/css/
 Use as ferramentas de desenvolvedor (F12) para analisar:
 
 **Console:**
+
 - Mensagens de log da aplicação
 - Confirmação de carregamento de scripts
 
 **Network:**
+
 - Tamanho dos arquivos carregados
 - Tempo de carregamento
 - Número de requisições HTTP
 
 **Sources:**
+
 - Visualização do código minificado
 - Estrutura de arquivos carregados
 
@@ -193,25 +202,26 @@ Use as ferramentas de desenvolvedor (F12) para analisar:
 
 ```javascript
 // 1. Importar módulos necessários
-const gulp = require('gulp');
-const sass = require('gulp-sass');
-const cleanCSS = require('gulp-clean-css');
-const rename = require('gulp-rename');
+const gulp = require("gulp");
+const sass = require("gulp-sass");
+const cleanCSS = require("gulp-clean-css");
+const rename = require("gulp-rename");
 
 // 2. Definir caminhos dos arquivos
 const paths = {
   styles: {
-    src: 'src/scss/**/*.scss',
-    dest: 'dist/css/'
-  }
+    src: "src/scss/**/*.scss",
+    dest: "dist/css/",
+  },
 };
 
 // 3. Criar função de tarefa
 function styles() {
-  return gulp.src(paths.styles.src)
+  return gulp
+    .src(paths.styles.src)
     .pipe(sass())
     .pipe(cleanCSS())
-    .pipe(rename({ suffix: '.min' }))
+    .pipe(rename({ suffix: ".min" }))
     .pipe(gulp.dest(paths.styles.dest));
 }
 
@@ -280,12 +290,12 @@ npm install
 
 ### Redução de Tamanho
 
-| Tipo de Arquivo | Tamanho Original | Tamanho Otimizado | Redução |
-|-----------------|------------------|-------------------|---------|
-| HTML | 2.5 KB | 1.8 KB | 28% |
-| CSS (compilado de SCSS) | 15 KB | 8 KB | 46% |
-| JavaScript (3 arquivos) | 20 KB | 12 KB (1 arquivo) | 40% |
-| **Total** | **37.5 KB** | **21.8 KB** | **42%** |
+| Tipo de Arquivo         | Tamanho Original | Tamanho Otimizado | Redução |
+| ----------------------- | ---------------- | ----------------- | ------- |
+| HTML                    | 2.5 KB           | 1.8 KB            | 28%     |
+| CSS (compilado de SCSS) | 15 KB            | 8 KB              | 46%     |
+| JavaScript (3 arquivos) | 20 KB            | 12 KB (1 arquivo) | 40%     |
+| **Total**               | **37.5 KB**      | **21.8 KB**       | **42%** |
 
 ### Performance do Build
 
@@ -314,12 +324,6 @@ npm install
 - **gulp-imagemin** - Otimização de imagens
 - **browser-sync** - Servidor de desenvolvimento e live reload
 - **del** - Remoção de arquivos/diretórios
-
----
-
-## Licença
-
-MIT
 
 ---
 
