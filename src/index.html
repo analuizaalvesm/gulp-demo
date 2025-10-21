@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demonstração Gulp.js - Build Tool</title>
+    <link rel="stylesheet" href="css/styles.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1 class="header__title">🚀 Gulp.js Demo</h1>
+            <p class="header__subtitle">Ferramenta de Automação de Build</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <section class="section">
+                <h2 class="section__title">O que é Gulp.js?</h2>
+                <p class="section__text">
+                    Gulp é uma ferramenta de automação de tarefas que utiliza streams do Node.js
+                    para processar arquivos de forma eficiente. É amplamente usado para compilar,
+                    minificar e otimizar recursos web.
+                </p>
+            </section>
+
+            <section class="section">
+                <h2 class="section__title">Tarefas Demonstradas</h2>
+                <div class="cards">
+                    <div class="card">
+                        <div class="card__icon">📄</div>
+                        <h3 class="card__title">HTML</h3>
+                        <p class="card__text">Minificação de HTML removendo espaços e comentários</p>
+                    </div>
+                    <div class="card">
+                        <div class="card__icon">🎨</div>
+                        <h3 class="card__title">SCSS/CSS</h3>
+                        <p class="card__text">Compilação SCSS e minificação CSS</p>
+                    </div>
+                    <div class="card">
+                        <div class="card__icon">⚡</div>
+                        <h3 class="card__title">JavaScript</h3>
+                        <p class="card__text">Concatenação e minificação de scripts</p>
+                    </div>
+                    <div class="card">
+                        <div class="card__icon">🖼️</div>
+                        <h3 class="card__title">Imagens</h3>
+                        <p class="card__text">Otimização e compressão de imagens</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section__title">Resultados do Build</h2>
+                <div class="results">
+                    <div class="result-item">
+                        <span class="result-item__label">Status:</span>
+                        <span class="result-item__value status-success" id="buildStatus">Pronto</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-item__label">Arquivos Processados:</span>
+                        <span class="result-item__value" id="filesCount">0</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section__title">Teste Interativo</h2>
+                <button class="btn btn--primary" id="testButton">Testar JavaScript</button>
+                <div class="output" id="output"></div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 - Demonstração Gulp.js para Trabalho Acadêmico</p>
+        </div>
+    </footer>
+
+    <script src="js/app.min.js"></script>
+</body>
+</html>
