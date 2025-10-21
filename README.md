@@ -1,7 +1,5 @@
 # 🚀 Demonstração Gulp.js
 
-## Gerência de Configuração e Evolução de Software
-
 ## 📋 Índice
 
 - [O que é Gulp.js?](#o-que-é-gulpjs)
