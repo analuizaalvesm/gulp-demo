@@ -1,4 +1,6 @@
-# 🚀 Demonstração Gulp.js - Trabalho Acadêmico
+# 🚀 Demonstração Gulp.js
+
+## Gerência de Configuração e Evolução de Software
 
 ## 📋 Índice
 
